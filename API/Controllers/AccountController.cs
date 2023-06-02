@@ -41,7 +41,7 @@ namespace API.Controllers
             return new UserDto
             {
                 Username = user.UserName,
-                Tokeen = _tokenService.CreateToken(user)
+                Token = _tokenService.CreateToken(user)
             };
         }
         private async Task<bool> UserExist(String userName)
@@ -63,7 +63,7 @@ namespace API.Controllers
             return new UserDto
             {
                 Username = user.UserName,
-                Tokeen = _tokenService.CreateToken(user)
+                Token = _tokenService.CreateToken(user)
             };
         }
     }
