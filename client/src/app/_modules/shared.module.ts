@@ -7,6 +7,9 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 
 
+
+
+
 @NgModule({
   declarations: [],
   imports: [
@@ -14,15 +17,18 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     NgxGalleryModule,
+    
     ToastrModule.forRoot({
       positionClass : 'toast-bottom-right'  
-    })
+    }),
+    
   ],
   exports:[
     BsDropdownModule,
     ToastrModule,
     TabsModule,
-    NgxGalleryModule
+    NgxGalleryModule,
+ 
 
   ]
 })
