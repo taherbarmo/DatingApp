@@ -5,31 +5,19 @@ import { User } from '../_models/user';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit{
-
+export class HomeComponent implements OnInit {
   registerMode = false;
-  users : any;
+  users: any;
 
-constructor(private http:HttpClient) {
-  
-  
-}
-  ngOnInit(): void {
-    this.getUsers();
+  constructor() {}
+  ngOnInit(): void {}
+  registerToggle() {
+    this.registerMode = !this.registerMode;
   }
-  registerToggle(){
-    this.registerMode=!this.registerMode;
-  }
-  getUsers(){
-    this.http.get('https://localhost:44314/api/users').subscribe({
-      next: (response) => (this.users = response),
-      error: (err) => console.log(err),
-      complete: () => console.log('response completed'),
-    });
-  }
-  cancelRegisterMode(event:boolean){
-    this.registerMode=event;
+
+  cancelRegisterMode(event: boolean) {
+    this.registerMode = event;
   }
 }
